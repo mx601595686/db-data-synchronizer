@@ -1,5 +1,5 @@
 # db-data-synchronizer
-一个简单的数据库数据同步工具
+一个简单的数据库数据同步工具。*目前只支持MySQL*
 
 ### 初始化连接
 ```javascript
