@@ -21,15 +21,27 @@ class DbDataSynchronizer {
         return synchronizer;
     }
 
+    /**
+     * 查询远端服务器上的数据
+     */
     sync(sql: string, params?: any[]) {
         return {
-            to: (dbName: string, tableName: string) => {
+            /**
+             * 指定数据保存的位置
+             * @param dbName 要保存到本地的数据库名称，默认与查询时指定的数据库名相同
+             * @param tableName 要保存到本地的表名称，默认与查询时指定的表名相同
+             */
+            to: (dbName?: string, tableName?: string) => {
                 return new Promise((resolve, reject) => {
                     let syncSql: string;    //同步数据sql
 
                     this._connection.remote.query(sql, params)
                         .on('error', reject)
                         .on('fields', fields => {
+                            //检索查询时指定的数据库名和表名
+                            if (dbName == null) dbName = fields[0].db;
+                            if (tableName == null) tableName = fields[0].table;
+
                             syncSql = "\
                                 INSERT INTO`"+ dbName + "`.`" + tableName + "`\
                                 ("+ fields.map(v => "`" + v.name + "`").join(',') + ")\

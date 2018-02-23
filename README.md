@@ -23,4 +23,10 @@ const synchronizer = await DbDataSynchronizer.init({
  * 将查询到的数据保存到`test`库的`tableB`表中
 */
 await synchronizer.sync('select * from test.tableA').to('test', 'tableB');
+
+/**
+ * 也可以省略to中的参数。则数据库名与表名默认与SQL中的保持相同。
+ * 例如，这里为：dbName = 'test'; tableName = 'tableA';
+*/
+await synchronizer.sync('select * from test.tableA').to();
 ```

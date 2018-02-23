@@ -1,6 +1,6 @@
 {
     "name": "db-data-synchronizer",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "一个简单的数据库数据同步工具",
     "main": "./bin/index.js",
     "types": "./bin/index.d.ts",
