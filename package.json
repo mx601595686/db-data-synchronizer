@@ -1,7 +1,7 @@
 {
-    "name": "my-typescript-template",
+    "name": "db-data-synchronizer",
     "version": "0.0.1",
-    "description": "我的typescript项目模板",
+    "description": "一个简单的数据库数据同步工具",
     "main": "./bin/index.js",
     "types": "./bin/index.d.ts",
     "scripts": {
@@ -16,17 +16,17 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mx601595686/my-typescript-template.git"
+        "url": "git+https://github.com/mx601595686/db-data-synchronizer.git"
     },
     "bugs": {
-        "url": "https://github.com/mx601595686/my-typescript-template/issues"
+        "url": "https://github.com/mx601595686/db-data-synchronizer/issues"
     },
-    "homepage": "https://github.com/mx601595686/my-typescript-template#readme",
+    "homepage": "https://github.com/mx601595686/db-data-synchronizer#readme",
     "devDependencies": {
-        "@types/component-emitter": "^1.2.6",
         "@types/expect.js": "^0.3.29",
-        "@types/lodash": "^4.14.85",
         "@types/mocha": "^2.2.40",
+        "@types/lodash": "^4.14.85",
+        "@types/mysql": "^2.15.2",
         "@types/node": "^7.0.13",
         "expect.js": "^0.3.1",
         "gulp": "^3.9.1",
@@ -37,8 +37,7 @@
         "typescript": "^2.7.1"
     },
     "dependencies": {
-        "component-emitter": "^1.2.1",
         "lodash": "^4.17.4",
-        "log-formatter": "^0.1.5"
+        "mysql": "^2.15.0"
     }
 }

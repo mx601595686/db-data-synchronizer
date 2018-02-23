@@ -1,24 +1,23 @@
 import expect = require('expect.js');
+import DbDataSynchronizer = require('../src');
 
-describe('测试模块', function () {
+/**
+ * 测试之前请先确保在数据库中创建一个`tableA`与`tableB`表，并且在A表中添加一些数据
+ */
 
-    before(function () {
-        // 所有测试开始之前执行
+it('测试', async function () {
+    this.timeout(30000);
+
+    const synchronizer = await DbDataSynchronizer.init({
+        remoteHost: 'localhost',
+        remotePort: 3306,
+        remoteUser: 'root',
+        remotePassword: 'root',
+        localHost: 'localhost',
+        localPort: 3306,
+        localUser: 'root',
+        localPassword: 'root'
     });
 
-    after(function () {
-        // 所有测试结束之后执行
-    });
-
-    beforeEach(function () {
-        // 每个测试开始之前执行
-    });
-
-    afterEach(function () {
-        // 每个测试结束之后执行
-    });
-
-    it('测试单元', function () {
-        expect('something').to.be.a('string');
-    });
+    await synchronizer.sync('select * from test.tableA').to('test', 'tableB');
 });
