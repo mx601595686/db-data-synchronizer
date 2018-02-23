@@ -9,7 +9,7 @@ declare class DbDataSynchronizer {
      * 初始化数据库连接
      */
     static init(param: ConnectionParameter): Promise<DbDataSynchronizer>;
-    sync(sql: string, params: any[]): {
+    sync(sql: string, params?: any[]): {
         to: (dbName: string, tableName: string) => Promise<{}>;
     };
 }
