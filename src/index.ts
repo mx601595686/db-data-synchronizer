@@ -38,8 +38,8 @@ class DbDataSynchronizer {
 
                     connection.local.query(updateSql, [..._.values(row), ..._.values(row)], (err) => {
                         if (err) {
-                            connection.remote.end();
-                            connection.local.end();
+                            connection.remote.destroy();
+                            connection.local.destroy();
                             reject(err);
                         } else {
                             connection.remote.resume();
@@ -47,8 +47,8 @@ class DbDataSynchronizer {
                     });
                 })
                 .on('end', () => {
-                    connection.remote.end();
-                    connection.local.end();
+                    connection.remote.destroy();
+                    connection.local.destroy();
                     resolve();
                 });
         }));
