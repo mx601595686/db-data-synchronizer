@@ -3,17 +3,19 @@ import { ConnectionParameter } from './ConnectionParameter';
  * 数据库数据同步工具
  */
 declare class DbDataSynchronizer {
-    private _connection;
-    private constructor();
+    private _conParam;
+    constructor(_conParam: ConnectionParameter);
     /**
-     * 初始化数据库连接
+     * 真正执行同步的方法
      */
-    static init(param: ConnectionParameter): Promise<DbDataSynchronizer>;
+    private _synchronizer(sql, params?, dbName?, tableName?);
     /**
      * 查询远端服务器上的数据
+     * @param sql 在远端执行的SQL
+     * @param params SQL参数
      */
     sync(sql: string, params?: any[]): {
-        to: (dbName?: string | undefined, tableName?: string | undefined) => Promise<{}>;
+        to: any;
     };
 }
 export = DbDataSynchronizer;
