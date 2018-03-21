@@ -5,7 +5,7 @@
 ```javascript
 const DbDataSynchronizer = require('db-data-synchronizer');
 
-const synchronizer = await DbDataSynchronizer.init({
+const synchronizer = new DbDataSynchronizer({
     remoteHost: '127.0.0.1',
     remotePort: 3306,
     remoteUser: 'root',
