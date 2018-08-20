@@ -1,6 +1,6 @@
 {
     "name": "db-data-synchronizer",
-    "version": "0.0.5",
+    "version": "0.1.0",
     "description": "一个简单的数据库数据同步工具",
     "main": "./bin/index.js",
     "types": "./bin/index.d.ts",
@@ -24,17 +24,17 @@
     "homepage": "https://github.com/mx601595686/db-data-synchronizer#readme",
     "devDependencies": {
         "@types/expect.js": "^0.3.29",
-        "@types/mocha": "^2.2.40",
+        "@types/mocha": "^5.2.5",
         "@types/lodash": "^4.14.85",
         "@types/mysql": "^2.15.2",
-        "@types/node": "^7.0.13",
+        "@types/node": "^10.7.1",
         "expect.js": "^0.3.1",
         "gulp": "^3.9.1",
         "gulp-sourcemaps": "^2.4.1",
-        "gulp-typescript": "^3.1.5",
-        "mocha": "^3.2.0",
-        "ts-node": "^3.0.4",
-        "typescript": "^2.7.1"
+        "gulp-typescript": "^5.0.0-alpha.3",
+        "mocha": "^5.2.0",
+        "ts-node": "^7.0.1",
+        "typescript": "^3.0.1"
     },
     "dependencies": {
         "lodash": "^4.17.4",
